@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aldana Montenegro | Data Analyst</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #171717;
+            background: #ffffff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ---------- NAVBAR ---------- */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid #eeeeee;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 5px;
+            color: #7042d8;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 15px;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #7042d8;
+        }
+
+        /* ---------- GENERAL ---------- */
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 80px 30px;
+        }
+
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 35px;
+            height: 3px;
+            background: #7042d8;
+            margin-top: 10px;
+        }
+
+        /* ---------- HERO ---------- */
+
+        .hero {
+            min-height: 650px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hello {
+            color: #7042d8;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            line-height: 1.1;
+            margin-bottom: 15px;
+        }
+
+        .hero h2 {
+            font-size: 27px;
+            color: #7042d8;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .hero p {
+            max-width: 600px;
+            font-size: 18px;
+            color: #555555;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            padding: 13px 24px;
+            border-radius: 7px;
+            font-weight: bold;
+            border: 1px solid #7042d8;
+            transition: 0.2s;
+        }
+
+        .button-primary {
+            background: #7042d8;
+            color: white;
+        }
+
+        .button-primary:hover {
+            background: #5d32c4;
+        }
+
+        .button-secondary {
+            color: #7042d8;
+            background: white;
+        }
+
+        .button-secondary:hover {
+            background: #f7f3ff;
+        }
+
+        /* ---------- ABOUT ---------- */
+
+        .about {
+            border-top: 1px solid #eeeeee;
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 50px;
+        }
+
+        .about-text {
+            color: #444444;
+            font-size: 17px;
+        }
+
+        /* ---------- SKILLS ---------- */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 18px;
+        }
+
+        .skill {
+            border: 1px solid #eeeeee;
+            border-radius: 10px;
+            padding: 28px 15px;
+            text-align: center;
+            transition: 0.2s;
+            background: white;
+        }
+
+        .skill:hover {
+            transform: translateY(-4px);
+            border-color: #cbb9f5;
+            box-shadow: 0 8px 25px rgba(112, 66, 216, 0.08);
+        }
+
+        .skill-icon {
+            font-size: 30px;
+            margin-bottom: 10px;
+            color: #7042d8;
+        }
+
+        /* ---------- FORMATION ---------- */
+
+        .timeline {
+            border-left: 2px solid #ddd5f5;
+            padding-left: 30px;
+        }
+
+        .timeline-item {
+            margin-bottom: 35px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: "";
+            width: 11px;
+            height: 11px;
+            background: #7042d8;
+            border-radius: 50%;
+            position: absolute;
+            left: -37px;
+            top: 7px;
+        }
+
+        .timeline-item h3 {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .timeline-item span {
+            color: #7042d8;
+            font-weight: bold;
+        }
+
+        .timeline-item p {
+            color: #555555;
+        }
+
+        /* ---------- EXPERIENCE ---------- */
+
+        .experience-card {
+            border: 1px solid #eeeeee;
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 850px;
+        }
+
+        .experience-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .experience-card span {
+            color: #7042d8;
+            font-weight: bold;
+        }
+
+        /* ---------- PROJECTS ---------- */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .project {
+            border: 1px solid #eeeeee;
+            border-radius: 12px;
+            padding: 30px;
+            transition: 0.2s;
+        }
+
+        .project:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+        }
+
+        .project h3 {
+            color: #7042d8;
+            margin-bottom: 10px;
+        }
+
+        .project p {
+            color: #555555;
+            margin-bottom: 18px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: #f2edff;
+            color: #7042d8;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+
+        /* ---------- CONTACT ---------- */
+
+        .contact {
+            border-top: 1px solid #eeeeee;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 35px;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            color: #444444;
+        }
+
+        .contact-link:hover {
+            color: #7042d8;
+        }
+
+        /* ---------- FOOTER ---------- */
+
+        footer {
+            border-top: 1px solid #eeeeee;
+            text-align: center;
+            padding: 25px;
+            color: #777777;
+            font-size: 14px;
+        }
+
+        /* ---------- RESPONSIVE ---------- */
+
+        @media (max-width: 850px) {
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero h2 {
+                font-size: 22px;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav>
+        <div class="nav-container">
+
+            <div class="logo">
+                ALDANA
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#formacion">Formación</a></li>
+                <li><a href="#experiencia">Experiencia</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="hero container">
+
+        <div class="hero-content">
+
+            <div class="hello">
+                ¡Hola! Soy
+            </div>
+
+            <h1>
+                Aldana Montenegro
+            </h1>
+
+            <h2>
+                Data Analyst | Business Intelligence
+            </h2>
+
+            <p>
+                Me interesa transformar datos en información clara
+                para facilitar la toma de decisiones y generar valor
+                a través del análisis.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#" class="button button-primary">
+                    Ver CV
+                </a>
+
+                <a href="https://github.com/AldanaMontenegro"
+                   target="_blank"
+                   class="button button-secondary">
+                    GitHub
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SOBRE MI -->
+
+    <section id="sobre-mi" class="about">
+
+        <div class="container">
+
+            <div class="about-content">
+
+                <h2 class="section-title">
+                    Sobre mí
+                </h2>
+
+                <div class="about-text">
+
+                    <p>
+                        Soy estudiante de la Tecnicatura en Gestión y
+                        Análisis de Datos en la UBA, con interés en el área de
+                        análisis de datos, Business Intelligence y
+                        visualización de información.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        Busco brindar, desarrollar y comunicar soluciones que permitan
+                        convertir datos en información útil para la
+                        toma de decisiones.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+
+    <section id="skills" class="container">
+
+        <h2 class="section-title">
+            Skills
+        </h2>
+
+        <div class="skills-grid">
+
+            <div class="skill">
+                <div class="skill-icon">▤</div>
+                <strong>SQL</strong>
+            </div>
+
+            <div class="skill">
+                <div class="skill-icon">▥</div>
+                <strong>Power BI</strong>
+            </div>
+
+            <div class="skill">
+                <div class="skill-icon">ƒx</div>
+                <strong>DAX</strong>
+            </div>
+
+            <div class="skill">
+                <div class="skill-icon">▦</div>
+                <strong>Excel</strong>
+            </div>
+
+            <div class="skill">
+                <div class="skill-icon">▤</div>
+                <strong>Power Query</strong>
+            </div>
+
+            <div class="skill">
+                <div class="skill-icon">Py</div>
+                <strong>Python</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FORMACION -->
+
+    <section id="formacion" class="container">
+
+        <h2 class="section-title">
+            Formación
+        </h2>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <h3>
+                    Tecnicatura en Gestión y Análisis de Datos
+                </h3>
+
+                <span>
+                    Universidad de Buenos Aires
+                </span>
+
+                <p>
+                    Formación orientada al análisis, gestión,
+                    interpretación y visualización de datos.
+                </p>
+
+            </div>
+
+            <div class="timeline-item">
+
+                <h3>
+                    Formación complementaria
+                </h3>
+
+                <p>
+                    Excel, Power Query, Power BI, DAX, SQL y Python.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EXPERIENCIA -->
+
+    <section id="experiencia" class="container">
+
+        <h2 class="section-title">
+            Experiencia
+        </h2>
+
+        <div class="experience-card">
+
+            <h3>
+                Experiencia profesional
+            </h3>
+
+            <span>
+                Próximamente
+            </span>
+
+            <p>
+                En esta sección se incorporará la experiencia
+                profesional relevante para el perfil de Data Analytics.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROYECTOS -->
+
+    <section id="proyectos" class="container">
+
+        <h2 class="section-title">
+            Proyectos
+        </h2>
+
+        <div class="projects-grid">
+
+            <div class="project">
+
+                <h3>
+                    Lotus Retail Analytics
+                </h3>
+
+                <p>
+                    Dashboard de ventas y Business Intelligence de una empresa ficticia
+                    desarrollado para aplicar mis conocimientos en SQL y Power BI para analizar el desempeño comercial,
+                    productos, rentabilidad y objetivos de ventas.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Power BI</span>
+                    <span class="tag">SQL</span>
+                    <span class="tag">DAX</span>
+                    <span class="tag">Excel</span>
+                </div>
+
+                <br>
+
+                <a href="https://github.com/AldanaMontenegro/lotus-retail-analytics"
+                   target="_blank"
+                   class="button button-secondary">
+                    Ver proyecto
+                </a>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>
+                    Próximo proyecto
+                </h3>
+
+                <p>
+                    Nuevos proyectos de análisis de datos
+                    serán incorporados próximamente.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">En desarrollo</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACTO -->
+
+    <section id="contacto" class="contact">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Contacto
+            </h2>
+
+            <div class="contact-links">
+
+                <!-- Reemplazar por tu email real -->
+                <a href="mailto:TU_EMAIL@example.com"
+                   class="contact-link">
+                    ✉ aldanamontenegro@2004.com
+                </a>
+
+                <!-- Reemplazar por tu LinkedIn -->
+                <a href="#"
+                   class="contact-link">
+                    LinkedIn
+                </a>
+
+                <a href="www.linkedin.com/in/aldana-montenegro"
+                   target="_blank"
+                   class="contact-link">
+                    GitHub
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        © 2026 Aldana Montenegro · Portfolio Data Analytics
+
+    </footer>
+
+</body>
+</html>
